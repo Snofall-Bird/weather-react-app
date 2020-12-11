@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import WeatherSearch from "./WeatherSearch";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <h1>Weather React App</h1>
+            <WeatherSearch defaultCity="Sydney" />
+          </div>{" "}
+          <footer className="source">
+            <a href="https://github.com/Snofall-Bird/weather-App-week6">
+              Open source code
+            </a>{" "}
+            By Sno Wirth
+          </footer>
+        </div>
+      </div>{" "}
     </div>
   );
 }
