@@ -7,6 +7,7 @@ import CardinalPoint from "./CardinalPoint";
 import WeatherData from "./WeatherData";
 import WeatherSpace from "./WeatherSpace";
 import DailyForecast from "./DailyForecast";
+import BackgroundImage from "./Background";
 // import Clock from "./Clock";
 
 import "./App.css";
@@ -32,7 +33,7 @@ export default function WeatherSearch(props) {
       sunset: FormatTime(response.data.sys.sunset * 1000),
       skycover: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      img: <WeatherSpace />,
+      img: <WeatherSpace code={response.data.weather[0].icon} />,
     });
   }
 
@@ -110,6 +111,7 @@ export default function WeatherSearch(props) {
       </div>
     );
   } else {
+    search();
     return form;
   }
 }

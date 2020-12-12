@@ -9,25 +9,29 @@ import sun from "./sun.png";
 
 export default function WeatherSpace(props) {
   const iconCode = {
-    "01d": <img src={sun} alt="sun" />,
-    "01n": <img src={sun} alt="sun" />,
-    "02d": <img src={sun} alt="partly clouds" />,
-    "02n": <img src={sky} alt="partly clouds" />,
-    "03d": <img src={sky} alt="clouds" />,
-    "03n": <img src={cloud} alt="clouds" />,
-    "04d": <img src={cloud} alt="clouds" />,
-    "04n": <img src={cloud} alt="clouds" />,
-    "09d": <img src={rain} alt="rain" />,
-    "09n": <img src={rain} alt="rain" />,
-    "10d": <img src={rain} alt="rain" />,
-    "10n": <img src={rain} alt="rain" />,
-    "11d": <img src={storm} alt="sleet" />,
-    "11n": <img src={storm} alt="sleet" />,
-    "13d": <img src={snow} alt="snow" />,
-    "13n": <img src={snow} alt="snow" />,
-    "50d": <img src={fog} alt="fog" />,
-    "50n": <img src={fog} alt="fog" />,
+    "01d": sun,
+    "01n": sun,
+    "02d": sun,
+    "02n": sky,
+    "03d": sky,
+    "03n": cloud,
+    "04d": cloud,
+    "04n": cloud,
+    "09d": rain,
+    "09n": rain,
+    "10d": rain,
+    "10n": rain,
+    "11d": storm,
+    "11n": storm,
+    "13d": snow,
+    "13n": snow,
+    "50d": fog,
+    "50n": fog,
   };
 
-  return <img src={iconCode[props.code]} alt=" " />;
+  return (
+    <div className="weatherSpace">
+      <img src={iconCode[props.code]} alt=" " />
+    </div>
+  );
 }
