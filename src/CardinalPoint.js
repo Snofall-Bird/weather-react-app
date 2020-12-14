@@ -2,7 +2,7 @@
 
 export default function cardinalPoint(response) {
   let cardinalPoint = response;
-  if (cardinalPoint > 0 && cardinalPoint <= 45) {
+  if ((cardinalPoint) => 0 && cardinalPoint <= 45) {
     cardinalPoint = "NNE";
   } else if (cardinalPoint > 45 && cardinalPoint <= 90) {
     cardinalPoint = "ENE";

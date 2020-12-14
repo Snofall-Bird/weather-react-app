@@ -97,11 +97,17 @@ body {
   text-transform: uppercase;
   font-weight: 600;
 }
-.units {
-  color: #310849;
+.unit {
+  font-size: smaller;
+  float: right;
+  display: block;
+  margin-top: 0px;
+  margin-right: 165px;
+  margin-bottom: 0px;
+  color: #ca7af8;
   cursor: default;
 }
-.units:hover {
+.unit:hover {
   color: #272727;
   text-decoration: underline;
 }
