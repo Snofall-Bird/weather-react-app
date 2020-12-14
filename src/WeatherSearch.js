@@ -82,7 +82,7 @@ export default function WeatherSearch(props) {
           </div>
         </div>
         <div className="col">
-          <button type="submit" id="search-Button" className="search">
+          <button type="submit" id="search-Button" className="current-location">
             Search
           </button>
           <button className="current-location" onClick={useCity}>

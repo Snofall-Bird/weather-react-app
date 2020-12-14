@@ -17,8 +17,7 @@ export default function WeatherData(props) {
       </div>
       <div className="information">
         <span className="col">
-          Sky Cover: {props.data.skycover}
-          <br />
+          Sky Cover: {props.data.skycover} <br />
           Humidity: {props.data.humidity}% <br />
           Wind:{props.data.wind}km/hr {props.data.direction}
           <br />
