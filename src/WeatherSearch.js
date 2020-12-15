@@ -7,7 +7,7 @@ import CardinalPoint from "./CardinalPoint";
 import WeatherData from "./WeatherData";
 import WeatherSpace from "./WeatherSpace";
 import DailyForecast from "./DailyForecast";
-import BackgroundImage from "./Background";
+// import BackgroundImage from "./Background";
 // import Clock from "./Clock";
 
 import "./App.css";
