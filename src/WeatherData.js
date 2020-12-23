@@ -11,8 +11,8 @@ export default function WeatherData(props) {
           Time is: {props.data.time} <br />
           Currently:
           <Temperature celsius={props.data.temp} />
-          High of:{props.data.highTemp}° <br />
-          Low of: {props.data.lowTemp}° <br />
+          High of : {props.data.highTemp}°C <br />
+          Low of: {props.data.lowTemp}°C <br />
         </div>
       </div>
       <div className="information">

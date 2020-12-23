@@ -1,7 +1,7 @@
 import "./App.css";
 import WeatherSearch from "./WeatherSearch";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
@@ -11,15 +11,21 @@ function App() {
             <WeatherSearch defaultCity="Sydney" />
           </div>{" "}
           <footer className="source">
-            <a href="https://github.com/Snofall-Bird/weather-App-week6">
-              Open source code
+            Open{"  "}
+            <a
+              href="https://github.com/Snofall-Bird/weather-react-app"
+              target="blank"
+            >
+              source code
             </a>{" "}
-            By Sno Wirth
+            By{"  "}
+            <a href="https://www.linkedin.com/in/sno-wirth" target="blank">
+              {" "}
+              Sno Wirth{" "}
+            </a>
           </footer>
         </div>
       </div>{" "}
     </div>
   );
 }
-
-export default App;
