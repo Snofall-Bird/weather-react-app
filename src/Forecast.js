@@ -9,22 +9,18 @@ export default function WeatherForecast(props) {
   function displayForecast(response) {
     setForecast(response.data);
     setLoaded(true);
+    let Longitude=response.data;
+    let Latitude=response.data;
   }
 
   if (loaded && props.city === forecast.city.name) {
     return (
       <div className="WeatherForecast row col-12 card-body">
-        <ForecastData data={forecast.list[3]} unit={props.unit} />
         <ForecastData data={forecast.list[11]} unit={props.unit} />
         <ForecastData data={forecast.list[19]} unit={props.unit} />
-        <ForecastData data={forecast.list[27]} unit={props.unit} />
-        <ForecastData data={forecast.list[35]} unit={props.unit} />
-
-        {/* <div className="forecast-day">{FormatDate({forecast.list[8]}).day</div> */}
-        {/* <div className="forecast-icon"> */}
-        {/* <WeatherIcon iconName={forecast.icon} /> */}
-        {/* </div> */}
-        {/* <div className="forecast-temp">{forecast.temperature}°</div> */}
+        <ForecastData data={forecast.list[25]} unit={props.unit} />
+        <ForecastData data={forecast.list[31]} unit={props.unit} />
+        <ForecastData data={forecast.list[39]} unit={props.unit} />
       </div>
     );
   } else {

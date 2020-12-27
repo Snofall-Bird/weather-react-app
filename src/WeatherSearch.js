@@ -6,11 +6,9 @@ import FormatTime from "./FormatTime";
 import CardinalPoint from "./CardinalPoint";
 import WeatherData from "./WeatherData";
 import WeatherSpace from "./WeatherSpace";
-import DailyForecast from "./DailyForecast";
-// import BackgroundImage from "./Background";
-// import Clock from "./Clock";
 
 import "./App.css";
+
 
 export default function WeatherSearch(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -24,7 +22,7 @@ export default function WeatherSearch(props) {
       date: FormatDate(response.data.dt * 1000),
       time: FormatTime(response.data.dt * 1000),
       temp: Math.round(response.data.main.temp),
-      highTemp: Math.round(response.data.main.temp_max),
+      highTemp:Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed * 3.6),
@@ -50,6 +48,8 @@ export default function WeatherSearch(props) {
     let apiKey = "62ee7d33e93dd7f42d07f5c3b2b8939c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
+    // let newapiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    // axios.get(newapiUrl).then(DailyForecast);
   }
 
   function searchCity(position) {
@@ -58,8 +58,6 @@ export default function WeatherSearch(props) {
     let longitude = position.coords.longitude;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
-    let newapiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely&appid=${apiKey}`;
-    axios.get(newapiUrl).then(DailyForecast);
   }
 
   function useCity(event) {
@@ -88,8 +86,6 @@ export default function WeatherSearch(props) {
           <button className="current-location" onClick={useCity}>
             Current Location
           </button>
-          {/* <Clock /> */}
-          <small id="clock"></small>
         </div>
       </div>
     </form>
@@ -101,12 +97,8 @@ export default function WeatherSearch(props) {
         {form}
         {weather.img}
         <WeatherData data={weather} unit={unit} setUnit={setUnit} />
-        <div className="forecast card-body" id="forecast">
+        <div className="forecast card-body" >
           <Forecast city={weather.city} unit={unit} setUnit={setUnit} />
-          {/* <DailyForecast /> */}
-          {/* <DailyForecast data={weather.list[3]} />
-          <DailyForecast data={weather.list[4]} />
-          <DailyForecast data={weather.list[5]} /> */}
         </div>
       </div>
     );

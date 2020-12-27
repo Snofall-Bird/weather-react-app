@@ -11,9 +11,13 @@ body {
 }
 .forecast {
   color: black;
+  text-align: center;
   background-image: linear-gradient(to top, #f7ef89 0%, #ffffff 100%);
 }
-
+.forecast canvas {
+  display: block;
+  margin: auto;
+}
 .information {
   font-size: smaller;
   float: right;

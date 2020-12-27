@@ -7,9 +7,11 @@ export default function ForecastData(props) {
 
     return `${HighTemp}°C`;
   }
+
   if (props.unit === "celsius") {
     return (
       <div className="ForecastData col">
+        day date
         <WeatherIcon code={props.data.weather[0].icon} />
         <span className="temperature"> {Temperature()}</span>
       </div>
