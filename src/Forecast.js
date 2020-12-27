@@ -9,8 +9,6 @@ export default function WeatherForecast(props) {
   function displayForecast(response) {
     setForecast(response.data);
     setLoaded(true);
-    let Longitude=response.data;
-    let Latitude=response.data;
   }
 
   if (loaded && props.city === forecast.city.name) {

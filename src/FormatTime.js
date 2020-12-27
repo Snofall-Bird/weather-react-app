@@ -1,6 +1,6 @@
 // import React from "react";
 
-export default function hourMin(timestamp) {
+export default function FormatTime(timestamp) {
   let currentTime = new Date(timestamp);
   let hours = currentTime.getHours();
   if (hours < 10) {

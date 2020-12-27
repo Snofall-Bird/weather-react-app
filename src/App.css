@@ -3,11 +3,11 @@ body {
   display: block;
   margin: auto;
   max-width: 50%;
-  min-width: 800px;
+  min-width: 700px;
   text-transform: capitalize;
   color: white;
-  background: #fdf4cc;
-  padding: 20px;
+  background: #fffbe8;
+  padding: 5px;
 }
 .forecast {
   color: black;
@@ -89,7 +89,7 @@ body {
   margin-top: 0px;
   margin-right: 165px;
   margin-bottom: 0px;
-  color: #ca7af8;
+  color: #ffffff;
   cursor: default;
 }
 .unit:hover {
@@ -100,4 +100,8 @@ body {
 .source {
   text-align: center;
   background-color: transparent;
+}
+
+.ForecastDate {
+  font-size: 12px;
 }
