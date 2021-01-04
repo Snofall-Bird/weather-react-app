@@ -4,8 +4,8 @@ import Forecast from "./Forecast";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
 import CardinalPoint from "./CardinalPoint";
-import WeatherData from "./WeatherData";
 import WeatherSpace from "./WeatherSpace";
+import Temperature from "./Temperature";
 
 import "./App.css";
 
@@ -73,6 +73,7 @@ export default function WeatherSearch(props) {
               placeholder="City or Town ie Sydney"
               onChange={updateCity}
               autoComplete="off"
+              autoFocus="on"
             />{" "}
           </div>
         </div>
@@ -93,7 +94,31 @@ export default function WeatherSearch(props) {
       <div className="Weather">
         {form}
         {weather.img}
-        <WeatherData data={weather} unit={unit} setUnit={setUnit} />
+        <div className="WeatherData">
+          <div className="row col">
+            <div className=" current-date">
+              <div className="City-Name">{weather.city}</div>
+             {weather.date} <br />
+              {weather.time} <br />
+              Currently:
+              <Temperature
+                celsius={weather.temp}
+                unit={unit}
+                setUnit={setUnit}
+              />
+            </div>
+          </div>
+          <div className="information">
+            <span className="col">
+              Sky Cover: {weather.skycover} <br />
+              Humidity: {weather.humidity}% <br />
+              Wind:{weather.wind}km/hr {weather.direction}
+              <br />
+              Sunrise:{weather.sunrise} <br />
+              Sunset: {weather.sunset}
+            </span>
+          </div>
+        </div>
         <div className="forecast card-body">
           <Forecast city={weather.city} unit={unit} setUnit={setUnit} />
         </div>

@@ -11,7 +11,7 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
-  if (loaded && props.city === forecast.city.name) {
+  if (loaded && props.city === forecast.city.name && props.unit === "celsius") {
     return (
       <div className="WeatherForecast row col-12 card-body">
         <ForecastData data={forecast.list[11]} unit={props.unit} />
@@ -22,11 +22,27 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    let city = props.city;
-    let apiKey = "62ee7d33e93dd7f42d07f5c3b2b8939c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecast);
+    if (
+      loaded &&
+      props.city === forecast.city.name &&
+      props.unit === "fahrenheit"
+    ) {
+      return (
+        <div className="WeatherForecast row col-12 card-body">
+          <ForecastData data={forecast.list[11]} unit={props.unit} />
+          <ForecastData data={forecast.list[19]} unit={props.unit} />
+          <ForecastData data={forecast.list[25]} unit={props.unit} />
+          <ForecastData data={forecast.list[31]} unit={props.unit} />
+          <ForecastData data={forecast.list[39]} unit={props.unit} />
+        </div>
+      );
+    } else {
+      let city = props.city;
+      let apiKey = "62ee7d33e93dd7f42d07f5c3b2b8939c";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(displayForecast);
 
-    return null;
+      return null;
+    }
   }
 }

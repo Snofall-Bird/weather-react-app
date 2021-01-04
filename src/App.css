@@ -22,7 +22,7 @@ body {
   font-size: smaller;
   float: right;
   display: block;
-  margin-top: -150px;
+  margin-top: -120px;
   margin-bottom: 10px;
   margin-right: 80px;
 }
@@ -104,4 +104,7 @@ body {
 
 .ForecastDate {
   font-size: 12px;
+}
+.WeatherData {
+  margin-left: 10px;
 }
